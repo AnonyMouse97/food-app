@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const AddToCart = ({ id = null }) => {
     return (
-        <button><FontAwesomeIcon icon="shopping-cart" /></button>
+        <Link to={`/details/${id}`}><FontAwesomeIcon icon="shopping-cart" /></Link>
     )
 }
 

@@ -5,10 +5,9 @@ import Details from './components/details/details';
 
 // font Awesome global imports
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faShoppingCart, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faCoffee, faShoppingCart)
+library.add(faShoppingCart)
 
 const App = () => {
   return (
@@ -18,7 +17,7 @@ const App = () => {
           <Route exact path="/">
             <Listing />
           </Route>
-          <Route path="/details">
+          <Route path="/details/:id">
             <Details />
           </Route>
           <Route path="/order">

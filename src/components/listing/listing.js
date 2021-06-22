@@ -18,7 +18,7 @@ const Listing = () => {
                         discount={burger.discount}
                         image={burger.url}
                     />
-                    <AddToCart />
+                    <AddToCart id={burger.id} />
                 </li>
             })}
         </ul>
