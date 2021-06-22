@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' }) => {
 
-
     return (
-        <div>
+        <>
             <img src={`img/burgers/${image}`} alt="burger" height="32px"></img>
 
             <h3>{name}</h3>
@@ -15,7 +13,7 @@ const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' 
                 : <p>{price}$</p>
             }
 
-        </div >
+        </ >
     )
 }
 

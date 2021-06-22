@@ -3,6 +3,8 @@ import React from 'react';
 import { burgersData } from '../../data/data';
 
 import BurgerItem from '../sub/burgerItem';
+import AddToCart from '../sub/addToCart'
+
 
 const Listing = () => {
 
@@ -16,6 +18,7 @@ const Listing = () => {
                         discount={burger.discount}
                         image={burger.url}
                     />
+                    <AddToCart />
                 </li>
             })}
         </ul>
