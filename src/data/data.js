@@ -8,7 +8,8 @@ export const burgersData = {
             "discount": 20,
             "size": "Big",
             "weight": 500,
-            "time": 8
+            "time": 8,
+            "url": "tibus.webp"
         },
         {
             "id": 2,
@@ -18,7 +19,8 @@ export const burgersData = {
             "discount": null,
             "size": "Medium",
             "weight": 370,
-            "time": 5
+            "time": 5,
+            "url": "leny.webp"
         },
         {
             "id": 3,
@@ -28,7 +30,8 @@ export const burgersData = {
             "discount": null,
             "size": "Medium",
             "weight": 380,
-            "time": 6
+            "time": 6,
+            "url": "phil.webp"
         },
         {
             "id": 4,
@@ -38,7 +41,8 @@ export const burgersData = {
             "discount": 10,
             "size": "Big",
             "weight": 425,
-            "time": 8
+            "time": 8,
+            "url": "aless.webp"
         },
         {
             "id": 5,
@@ -48,7 +52,8 @@ export const burgersData = {
             "discount": 33,
             "size": "Big",
             "weight": 475,
-            "time": 8
+            "time": 8,
+            "url": "bald.webp"
         },
         {
             "id": 6,
@@ -58,7 +63,8 @@ export const burgersData = {
             "discount": null,
             "size": "Small",
             "weight": 175,
-            "time": 3
+            "time": 3,
+            "url": "rafaelo.webp"
         },
         {
             "id": 7,
@@ -68,7 +74,8 @@ export const burgersData = {
             "discount": 15,
             "size": "Medium",
             "weight": 250,
-            "time": 6
+            "time": 6,
+            "url": "eiffel.webp"
         }
     ]
 }

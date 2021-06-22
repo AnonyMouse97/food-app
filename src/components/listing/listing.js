@@ -14,6 +14,7 @@ const Listing = () => {
                         price={burger.price}
                         name={burger.name}
                         discount={burger.discount}
+                        image={burger.url}
                     />
                 </li>
             })}
