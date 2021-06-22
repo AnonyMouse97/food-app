@@ -12,7 +12,7 @@ const Listing = () => {
     return (
         <>
             <h1>Welcome to WacDominique's*</h1>
-            <h2>The best burgers you'll find on this fake app.</h2>
+            <h2>Th beste burgers you'll find on this fake app.</h2>
             <ul>
                 {burgersData.burgers.map((burger) => {
                     return <li key={burger.id}>

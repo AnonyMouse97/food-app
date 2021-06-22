@@ -14,6 +14,7 @@ const Details = () => {
         <div>
             <Link to="/"><FontAwesomeIcon icon="chevron-left" /></Link>
 
+            <img src={`../img/burgers/${burger.url}`} alt={burger.name} width="250px"></img>
             {
                 burger.discount &&
                 <p> {burger.discount}%  OFF</p>
@@ -21,8 +22,8 @@ const Details = () => {
             <h2>{burger.name}</h2>
 
             {burger.discount
-                ? <> <del> {burger.price}$ </del> <p>{burger.price - burger.discount / 100}$</p> </>
-                : <p>{burger.price}$</p>
+                ? <> <del> ${burger.price} </del> <p>${Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100}</p> </>
+                : <p>${burger.price}</p>
             }
 
             <p>{burger.description}</p>
