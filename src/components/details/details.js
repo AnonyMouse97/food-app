@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { burgersData } from '../../data/data';
+import AddRemove from '../sub/addRemove'
 
 const Details = () => {
 
@@ -35,8 +36,9 @@ const Details = () => {
                 <dd> {burger.weight}g</dd>
                 <dt><FontAwesomeIcon icon="weight-hanging" /> Prepare time</dt>
                 <dd><FontAwesomeIcon icon="clock" /> {burger.time} mins</dd>
-
             </dl>
+
+            <AddRemove />
 
         </div>
     )
