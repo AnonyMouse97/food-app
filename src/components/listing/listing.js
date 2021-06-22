@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { burgersData } from '../../data/data';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import BurgerItem from '../sub/burgerItem';
-import AddToCart from '../sub/addToCart';
 
 
 const Listing = () => {
@@ -21,7 +22,7 @@ const Listing = () => {
                             discount={burger.discount}
                             image={burger.url}
                         />
-                        <AddToCart id={burger.id} />
+                        <Link to={`/details/${burger.id}`}><FontAwesomeIcon icon="shopping-cart" /></Link>
                     </li>
                 })}
             </ul>
