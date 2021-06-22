@@ -9,11 +9,11 @@ const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' 
             <h3>{name}</h3>
 
             {discount
-                ? <div> <del> {price}$ </del> <p>{price - discount / 100}$</p> </div>
+                ? <> <del> {price}$ </del> <p>{price - discount / 100}$</p> </>
                 : <p>{price}$</p>
             }
 
-        </ >
+        </>
     )
 }
 

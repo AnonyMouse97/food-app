@@ -5,9 +5,24 @@ import Details from './components/details/details';
 
 // font Awesome global imports
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import {
+  faShoppingCart,
+  faWeightHanging,
+  faHamburger,
+  faClock,
+  faChevronLeft,
+  faPlus,
+  faMinus
+} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faShoppingCart)
+library.add(
+  faShoppingCart,
+  faWeightHanging,
+  faHamburger,
+  faClock,
+  faChevronLeft,
+  faPlus,
+  faMinus)
 
 const App = () => {
   return (

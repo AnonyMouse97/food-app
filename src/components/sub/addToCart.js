@@ -10,3 +10,5 @@ const AddToCart = ({ id = null }) => {
 }
 
 export default AddToCart;
+
+// TO DELETE
