@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Listing from './components/listing/listing';
 import Details from './components/details/details';
 import Order from './components/order/order'
+import CartContext from './components/sub/cartContext';
 
 // font Awesome global imports
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -26,20 +27,34 @@ library.add(
   faPlus,
   faMinus)
 
+
 const App = () => {
+  const [cart, setCart] = useState({
+    order: [],
+    totalPrice: 0,
+    totalAmount: 0,
+    totalTime: 0,
+    totalDiscount: 0
+  })
+
+  const cartProvider = useMemo(() => ({ cart, setCart }), [cart, setCart])
+
+
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
-            <Listing />
-          </Route>
-          <Route path="/details/:id">
-            <Details />
-          </Route>
-          <Route path="/order">
-            <Order />
-          </Route>
+          <CartContext.Provider value={cartProvider}>
+            <Route exact path="/">
+              <Listing />
+            </Route>
+            <Route path="/details/:id">
+              <Details />
+            </Route>
+            <Route path="/order">
+              <Order />
+            </Route>
+          </CartContext.Provider>
         </Switch>
       </div>
     </Router>
