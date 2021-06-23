@@ -15,7 +15,9 @@ import {
   faClock,
   faChevronLeft,
   faPlus,
-  faMinus
+  faMinus,
+  faLongArrowAltRight,
+  faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -25,7 +27,9 @@ library.add(
   faClock,
   faChevronLeft,
   faPlus,
-  faMinus)
+  faMinus,
+  faLongArrowAltRight,
+  faTrashAlt)
 
 
 const App = () => {
@@ -48,10 +52,10 @@ const App = () => {
             <Route exact path="/">
               <Listing />
             </Route>
-            <Route path="/details/:id">
+            <Route exact path="/details/:id">
               <Details />
             </Route>
-            <Route path="/order">
+            <Route exact path="/order">
               <Order />
             </Route>
           </CartContext.Provider>

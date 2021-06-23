@@ -31,12 +31,12 @@ const Details = () => {
 
         newCart.totalAmount += amount;
         newCart.totalTime += burger.time;
+
         if (burger.discount) {
-            newCart.totalDiscount += Math.round((burger.discount / 100 * burger.price) * 100) / 100;
-            newCart.totalPrice += Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100
-        } else {
-            newCart.totalPrice += burger.price;
+            newCart.totalDiscount += Math.round((burger.discount / 100 * burger.price) * amount * 100) / 100;
         }
+        newCart.totalPrice += burger.price * amount;
+
 
 
         const ordered = newCart.order.find(x => x.id === burger.id)
@@ -59,8 +59,9 @@ const Details = () => {
     return (
         <div>
             <Link to="/"><FontAwesomeIcon icon="chevron-left" /></Link>
+            <Link to="/order"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
 
-            <div>{cart.totalAmount}</div>
+
 
             <img src={`../img/burgers/${burger.url}`} alt={burger.name} width="250px"></img>
             {
@@ -91,7 +92,7 @@ const Details = () => {
                 handleMinus={handleMinus}
             />
 
-            <button onClick={handleAdd}><FontAwesomeIcon icon="shopping-cart" /> Add to cart</button>
+            <button onClick={handleAdd} label="Add to cart"><FontAwesomeIcon icon="shopping-cart" /> Add to cart</button>
         </div>
     )
 }
