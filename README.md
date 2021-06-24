@@ -22,6 +22,6 @@ I choosed to use the native **useContext** hook to save the shopping list and th
 
 ## Disclaimer
 
-As i got sick during the test thanks to my 5G biological antenna's update I had to rush a bit to finish a viable app. The project structure could be much more clean (optimizing SASS use, reusing components, better react structure for more readable code,...) But in the end it works ans the result is not bad at all, hope you like it 😊.
+As i got sick during the test thanks to my 5G biological antenna's update I had to rush a bit to finish a viable app. The project structure could be much more clean (optimizing SASS use, reusing components, better react structure for more readable code,...) But in the end it works ans the result is not bad at all ! Hope you'll like it 😊.
 
 And don't forget to order you ake burger 🍔 !
