@@ -13,10 +13,10 @@ const Order = () => {
 
     console.log(cart)
 
+
     const handlePlus = (id) => {
         const burger = burgersData.burgers.find(x => x.id === id);
-        //const ordered = cart.order.find(x => x.id === id)
-        const index = cart.order.findIndex(x => x.id === id);
+        const index = cart.order.findIndex(y => y.id === id);
 
         const orders = cart.order;
         orders[index].amount++;
@@ -24,17 +24,17 @@ const Order = () => {
         setCart({
             order: orders,
             totalPrice: cart.totalPrice + burger.price,
-            totalAmount: cart.totalAmount++,
+            totalAmount: cart.totalAmount + 1,
             totalTime: cart.totalTime + burger.time,
             totalDiscount: cart.totalDiscount + burger.discount / 100 * burger.price
         })
     }
     const handleMinus = (id) => {
         const burger = burgersData.burgers.find(x => x.id === id);
-        const ordered = cart.order.find(x => x.id === id);
-        const index = cart.order.findIndex(x => x.id === id);
+        const ordered = cart.order.find(y => y.id === id);
+        const index = cart.order.findIndex(z => z.id === id);
 
-        const orders = cart.order
+        const orders = cart.order;
 
         orders[index].amount--;
         if (ordered.amount === 0) {
@@ -52,10 +52,13 @@ const Order = () => {
 
     const handleDelete = (id) => {
         const burger = burgersData.burgers.find(x => x.id === id);
-        const ordered = cart.order.find(x => x.id === id);
-        const index = cart.order.findIndex(x => x.id === id);
+        const ordered = cart.order.find(y => y.id === id);
+        const index = cart.order.findIndex(z => z.id === id);
 
-        const orders = cart.order.splice(index, 1)
+
+
+        const orders = cart.order;
+        orders.splice(index, 1);
 
         setCart({
             order: orders,
@@ -98,7 +101,7 @@ const Order = () => {
                 <dl>
                     <div>
                         <dt>Items</dt>
-                        <dd>${minDigits(cart.totalPrice)}</dd>
+                        <dd>${minDigits(Math.abs(cart.totalPrice))}</dd>
                     </div>
                     <div>
                         <dt>Discount</dt>
@@ -106,7 +109,7 @@ const Order = () => {
                     </div>
                     <div>
                         <dt>Cost</dt>
-                        <dd className="dd-cost">${minDigits(Math.round((cart.totalPrice - cart.totalDiscount) * 100) / 100)}</dd>
+                        <dd className="dd-cost">${minDigits(Math.abs(Math.round((cart.totalPrice - cart.totalDiscount) * 100) / 100))}</dd>
                     </div>
                     <div>
                         <dt>Estimated time</dt>
@@ -114,7 +117,7 @@ const Order = () => {
                     </div>
                 </dl>
 
-                <button onClick={() => alert('Fake Order is fakely sent to you ! 🚀')}>Payment & Delivery <FontAwesomeIcon icon="long-arrow-alt-right" /></button>
+                <button onClick={() => alert('Your fake order is fakely sent to you by a fake delivery guy ! 🚀')}>Payment & Delivery <FontAwesomeIcon icon="long-arrow-alt-right" /></button>
             </div>
         </div>
     )
