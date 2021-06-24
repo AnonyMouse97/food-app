@@ -1,0 +1,83 @@
+ul{
+    margin:2.5em 1.5em 0;
+    padding-bottom: 2em;
+    li{ 
+        position: relative;
+        margin-top: 2.5em;
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        height: 8vh;
+        img{
+            height: 80%;
+            margin:auto;
+        }
+        h3{
+            font-weight: bold;
+        }
+        .price{
+            margin-top: auto;
+            display: flex;
+            flex-direction: row-reverse;
+            p{
+                &::first-letter{
+                    font-size: .7em;
+                    vertical-align: top;
+                }
+            }
+            del{
+                position: relative;
+                margin-right: 1em;
+                font-size: .8em;
+                color: #a8a8a8;
+                text-decoration: none;
+                &:before{
+                    position: absolute;
+                    content:'';
+                    right: 0;
+                    left: 0;
+                    top: 50%;
+                    border-top: 2px solid;
+                    border-color: inherit;
+                    transform: rotate(-30deg);
+                }
+            }
+        }
+        .buy{
+            position: absolute;
+            right: 0;
+            border-radius: 10px;
+            padding:.5em;
+            color: white;
+            background-color: #5ad60d;
+        }
+        .delete{
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #a8a8a8;
+            border: none;
+            background-color: rgba(0,0,0,0);
+            font-size: 1em;
+        }
+        .plusMinus{
+            position: absolute;
+            bottom:- .5em;
+            display: flex;
+            margin-left: 4em;;
+            button{
+                height: 2em;
+                border-radius: 10px;
+                padding:0 .5em ;
+                border:none;
+                color: #5ad60d;
+                background-color: #ffffff;
+                font-weight: bold;
+            }
+            div{
+                text-align: center;
+                margin: auto 1em;
+                width: .5rem;
+            }
+        }
+    }
+}

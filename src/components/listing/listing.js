@@ -12,13 +12,17 @@ const Listing = () => {
     const { cart } = useContext(CartContext)
 
     return (
-        <>
+        <div className="listing">
             <div className="navigation">
                 <Link to="/order" className="cart"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
             </div>
-            <h1>Welcome to WacDominique's*</h1>
-            <em>*aka WacDo's</em>
-            <h2>The best burgers you'll find on this fake app.</h2>
+
+            <div className="title">
+                <img src={'/img/mcdo.svg'} alt="WacDo's Logo" className="logo"></img>
+                <h1>Welcome to WacDominique's*</h1>
+                <em>*aka WacDo's</em>
+                <h2>The best fake burgers around.</h2>
+            </div>
             <ul>
                 {burgersData.burgers.map((burger) => {
                     return <li key={burger.id}>
@@ -28,11 +32,11 @@ const Listing = () => {
                             discount={burger.discount}
                             image={burger.url}
                         />
-                        <Link to={`/details/${burger.id}`}><FontAwesomeIcon icon="shopping-cart" /></Link>
+                        <Link to={`/details/${burger.id}`} className="buy"><FontAwesomeIcon icon="shopping-cart" /></Link>
                     </li>
                 })}
             </ul>
-        </>
+        </div>
     )
 }
 

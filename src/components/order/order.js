@@ -11,6 +11,8 @@ import { minDigits } from '../../utils/digitsConv';
 const Order = () => {
     const { cart, setCart } = useContext(CartContext);
 
+    console.log(cart)
+
     const handlePlus = (id) => {
         const burger = burgersData.burgers.find(x => x.id === id);
         //const ordered = cart.order.find(x => x.id === id)
@@ -53,7 +55,7 @@ const Order = () => {
         const ordered = cart.order.find(x => x.id === id);
         const index = cart.order.findIndex(x => x.id === id);
 
-        const orders = cart.order.splice(index + 1, 1)
+        const orders = cart.order.splice(index, 1)
 
         setCart({
             order: orders,
@@ -62,6 +64,8 @@ const Order = () => {
             totalTime: cart.totalTime - (burger.time * ordered.amount),
             totalDiscount: cart.totalDiscount - (burger.discount / 100 * burger.price) * ordered.amount
         })
+
+
     }
 
     return (
@@ -80,13 +84,13 @@ const Order = () => {
                             discount={burger.discount}
                             image={burger.url}
                         />
-                        <div>
+                        <div className="plusMinus">
                             <button onClick={() => handleMinus(orderItem.id)} label="remove  item" >-</button>
                             <div>{orderItem.amount}</div>
                             <button onClick={() => handlePlus(orderItem.id)} label="add item">+</button>
                         </div>
 
-                        <button onClick={() => handleDelete(orderItem.id)}><FontAwesomeIcon icon="trash-alt" /></button>
+                        <button onClick={() => handleDelete(orderItem.id)} className="delete"><FontAwesomeIcon icon="trash-alt" /></button>
                     </li>
                 })}
             </ul>

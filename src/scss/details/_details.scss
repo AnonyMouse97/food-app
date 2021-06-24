@@ -53,16 +53,16 @@
                 color: #a8a8a8;
                 text-decoration: none;
                 position: relative;
+                &:before{
+                    position: absolute;
+                    content:'';
+                    right: 0;
+                    left: 0;
+                    top: 50%;
+                    border-top: 2px solid;
+                    border-color: inherit;
+                    transform: rotate(-30deg);
             }
-            del:before{
-                position: absolute;
-                content:'';
-                right: 0;
-                left: 0;
-                top: 50%;
-                border-top: 2px solid;
-                border-color: inherit;
-                transform: rotate(-30deg);
             }
             p::first-letter{
                font-size: .6em;
@@ -72,7 +72,7 @@
         dl{
             text-align: center;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             dt{
                 color: #a8a8a8;
                 font-size: .8em;
