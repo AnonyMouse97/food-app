@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/food-app/static/css/main.917c57da.chunk.css",
+    "main.js": "/food-app/static/js/main.c9b7ce4c.chunk.js",
+    "main.js.map": "/food-app/static/js/main.c9b7ce4c.chunk.js.map",
+    "runtime-main.js": "/food-app/static/js/runtime-main.4ffad861.js",
+    "runtime-main.js.map": "/food-app/static/js/runtime-main.4ffad861.js.map",
+    "static/js/2.0c877b2a.chunk.js": "/food-app/static/js/2.0c877b2a.chunk.js",
+    "static/js/2.0c877b2a.chunk.js.map": "/food-app/static/js/2.0c877b2a.chunk.js.map",
+    "index.html": "/food-app/index.html",
+    "static/css/main.917c57da.chunk.css.map": "/food-app/static/css/main.917c57da.chunk.css.map",
+    "static/js/2.0c877b2a.chunk.js.LICENSE.txt": "/food-app/static/js/2.0c877b2a.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/food-app/static/media/Poppins-SemiBoldItalic.cc7ee35c.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ffad861.js",
+    "static/js/2.0c877b2a.chunk.js",
+    "static/css/main.917c57da.chunk.css",
+    "static/js/main.c9b7ce4c.chunk.js"
+  ]
+}
