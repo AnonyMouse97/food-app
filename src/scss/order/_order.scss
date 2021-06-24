@@ -1,0 +1,45 @@
+.order{
+    position: relative;
+    background-color: #dadada;
+    height: 100%;
+    min-height: 100vh;
+    .checkout{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        background-color: #ffffff;
+        padding-top:2em;
+        & >*{
+            margin: 0 10% 0;
+        }
+        dl{
+            div{
+                margin-bottom: 1em;
+                display: flex;
+                justify-content: space-between;
+            }
+            dt{
+                color: #a8a8a8;
+            }
+            .dd-discount, .dd-time{
+                color: #a8a8a8;
+            }
+            .dd-cost{
+                font-weight: bold;
+            }
+        }
+        button{
+            border: none;
+            padding: 1em;
+            width: 80%;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: #fed231;
+            margin-bottom: .5em;
+        }
+
+    }
+}

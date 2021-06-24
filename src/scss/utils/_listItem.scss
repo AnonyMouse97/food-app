@@ -1,5 +1,5 @@
 ul{
-    margin:2.5em 1.5em 0;
+    padding:.5em 1.5em 0;
     padding-bottom: 2em;
     li{ 
         position: relative;
@@ -8,7 +8,7 @@ ul{
         grid-template-columns: 20% 50% 30%;
         height: 8vh;
         img{
-            height: 80%;
+            height: 70%;
             margin:auto;
         }
         h3{
@@ -61,12 +61,12 @@ ul{
         }
         .plusMinus{
             position: absolute;
-            bottom:- .5em;
+            bottom: -.5em;
             display: flex;
             margin-left: 4em;;
             button{
                 height: 2em;
-                border-radius: 10px;
+                border-radius: 5px;
                 padding:0 .5em ;
                 border:none;
                 color: #5ad60d;

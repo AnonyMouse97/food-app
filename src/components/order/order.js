@@ -69,7 +69,7 @@ const Order = () => {
     }
 
     return (
-        <>
+        <div className="order">
             <div className="navigation">
                 <Link to="/" className="back-link"><FontAwesomeIcon icon="chevron-left" /></Link>
             </div>
@@ -94,19 +94,29 @@ const Order = () => {
                     </li>
                 })}
             </ul>
-            <dl>
-                <dt>Items</dt>
-                <dd>${minDigits(cart.totalPrice)}</dd>
-                <dt>Discount</dt>
-                <dd>-${minDigits(cart.totalDiscount)}</dd>
-                <dt>Cost</dt>
-                <dd>${minDigits(Math.round((cart.totalPrice - cart.totalDiscount) * 100) / 100)}</dd>
-                <dt>Estimated time</dt>
-                <dd>{cart.totalTime} mins</dd>
-            </dl>
+            <div className="checkout">
+                <dl>
+                    <div>
+                        <dt>Items</dt>
+                        <dd>${minDigits(cart.totalPrice)}</dd>
+                    </div>
+                    <div>
+                        <dt>Discount</dt>
+                        <dd className="dd-discount">-${minDigits(cart.totalDiscount)}</dd>
+                    </div>
+                    <div>
+                        <dt>Cost</dt>
+                        <dd className="dd-cost">${minDigits(Math.round((cart.totalPrice - cart.totalDiscount) * 100) / 100)}</dd>
+                    </div>
+                    <div>
+                        <dt>Estimated time</dt>
+                        <dd className="dd-time">{cart.totalTime} mins</dd>
+                    </div>
+                </dl>
 
-            <button onClick={() => alert('Fake Order is fakely sent to you ! 🚀')}>Payment & Delivery <FontAwesomeIcon icon="long-arrow-alt-right" /></button>
-        </>
+                <button onClick={() => alert('Fake Order is fakely sent to you ! 🚀')}>Payment & Delivery <FontAwesomeIcon icon="long-arrow-alt-right" /></button>
+            </div>
+        </div>
     )
 }
 
