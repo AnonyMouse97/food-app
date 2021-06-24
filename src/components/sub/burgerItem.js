@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { minDigits } from '../../utils/digitsConv';
+
 const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' }) => {
 
     return (
@@ -9,8 +11,8 @@ const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' 
             <h3>{name}</h3>
 
             {discount
-                ? <> <del> ${price} </del> <p>${Math.round((price - price * discount / 100) * 100) / 100}</p> </>
-                : <p>${price}</p>
+                ? <> <del> ${minDigits(price)} </del> <p>${Math.round((price - price * discount / 100) * 100) / 100}</p> </>
+                : <p>${minDigits(price)}</p>
             }
 
         </>

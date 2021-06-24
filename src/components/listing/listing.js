@@ -9,7 +9,7 @@ import CartContext from '../sub/cartContext';
 
 
 const Listing = () => {
-    const { cart, setCart } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
 
     return (
         <>

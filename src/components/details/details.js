@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { burgersData } from '../../data/data';
+import { minDigits } from '../../utils/digitsConv';
 import AddRemove from '../sub/addRemove'
 import CartContext from '../sub/cartContext';
 
@@ -27,32 +28,26 @@ const Details = () => {
             return
         }
 
-        const newCart = cart;
-
-        newCart.totalAmount += amount;
-        newCart.totalTime += burger.time;
-
-        if (burger.discount) {
-            newCart.totalDiscount += Math.round((burger.discount / 100 * burger.price) * amount * 100) / 100;
-        }
-        newCart.totalPrice += burger.price * amount;
-
-
-
-        const ordered = newCart.order.find(x => x.id === burger.id)
+        const orders = cart.order
+        const ordered = orders.find(x => x.id === burger.id)
 
         if (ordered) {
             ordered.amount += amount;
         } else {
-            newCart.order.push({
+            orders.push({
                 id: burger.id,
                 amount: amount
             });
         }
 
-
-        setCart(newCart)
-        setAmount(0);
+        setCart({
+            order: orders,
+            totalPrice: cart.totalPrice + burger.price * amount,
+            totalAmount: cart.totalAmount + amount,
+            totalTime: cart.totalTime + burger.time * amount,
+            totalDiscount: cart.totalDiscount + Math.round((burger.discount / 100 * burger.price) * amount * 100) / 100
+        })
+        setAmount(1);
     }
 
 
@@ -71,8 +66,8 @@ const Details = () => {
             <h2>{burger.name}</h2>
 
             {burger.discount
-                ? <> <del> ${burger.price} </del> <p>${Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100}</p> </>
-                : <p>${burger.price}</p>
+                ? <> <del> ${minDigits(burger.price)} </del> <p>${Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100}</p> </>
+                : <p>${minDigits(burger.price)}</p>
             }
 
             <p>{burger.description}</p>
