@@ -11,9 +11,6 @@ import { minDigits } from '../../utils/digitsConv';
 const Order = () => {
     const { cart, setCart } = useContext(CartContext);
 
-    console.log(cart)
-
-
     const handlePlus = (id) => {
         const burger = burgersData.burgers.find(x => x.id === id);
         const index = cart.order.findIndex(y => y.id === id);
