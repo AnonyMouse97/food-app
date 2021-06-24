@@ -13,7 +13,9 @@ const Listing = () => {
 
     return (
         <>
-            <Link to="/order"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
+            <div className="navigation">
+                <Link to="/order" className="cart"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
+            </div>
             <h1>Welcome to WacDominique's*</h1>
             <em>*aka WacDo's</em>
             <h2>The best burgers you'll find on this fake app.</h2>

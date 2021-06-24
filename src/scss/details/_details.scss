@@ -1,0 +1,120 @@
+.details{
+    height: 100vh;
+    background : radial-gradient(#ffee9f ,#ffd134 );
+
+    img{
+        display: block;
+        margin: -2em auto ;
+        width: 200px;
+    }
+    .details-order{
+        position: absolute;
+        bottom: 0;
+        height: 75vh;
+        width: 100%;
+        padding-top: 2em;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        background-color: #ffffff;
+        & > *{
+            margin: 1.5rem 10% 0 10%;
+        }
+        .slide-bar{
+            position: absolute;
+            top: 1em;
+            left: 50%;
+            width: 40px;
+            height: 3px;
+            margin: 0;
+            margin-left:-20px;
+            background-color: #3f3f3f;
+            border-radius: 2px;
+        }
+        .discount{
+            display: inline-block;
+            padding: .8em;
+            border-radius: 5px;
+            background-color: #afdefd;
+            color: #35aee8 ;
+            font-weight: bold;
+            font-size: .8em;
+        }
+        h2{
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .price{
+            display: flex;
+            font-size: 1.8rem;
+            del{
+                font-size: .5em;
+                align-self: flex-end;
+                margin-left: 1em;
+                color: #a8a8a8;
+                text-decoration: none;
+                position: relative;
+            }
+            del:before{
+                position: absolute;
+                content:'';
+                right: 0;
+                left: 0;
+                top: 50%;
+                border-top: 2px solid;
+                border-color: inherit;
+                transform: rotate(-30deg);
+            }
+            p::first-letter{
+               font-size: .6em;
+               vertical-align: top;
+            }
+        }
+        dl{
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            dt{
+                color: #a8a8a8;
+                font-size: .8em;
+                margin-bottom: .8em;
+            }
+        }
+        .add-cart{
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            margin: 0 10% ;
+            bottom: 2em;
+            display: flex;
+            justify-content: space-between;
+            .add-remove{
+                display: flex;
+                padding:.5em ;
+                background-color: #dadada;
+                border-radius: 15px;
+                button{
+                    height: 100%;
+                    background-color: #ffffff;
+                    color: #000000;
+                    padding: 0 .5em ;
+                }
+                div{
+                    text-align: center;
+                    font-size: 1.2em;
+                    margin: auto 1em;
+                    width: .5rem;
+                }
+            }
+            button{
+                height: 100%;
+                padding: 1em 1.5em;
+                border-radius: 15px;
+                background-color: #5ad60d;
+                border: none;
+                color: #ffffff;
+                font-weight: bold;
+            }
+        }
+    }
+    
+}

@@ -1,4 +1,9 @@
+// reset
 @import '../src/scss/_reset.scss';
 
+// utils imports
 @import '../src/scss/utils/_font.scss';
 @import '../src/scss/utils/_buttons.scss';
+
+// main imports
+@import '../src/scss/details/_details.scss';

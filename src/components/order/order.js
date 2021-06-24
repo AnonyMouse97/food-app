@@ -66,7 +66,9 @@ const Order = () => {
 
     return (
         <>
-            <Link to="/"><FontAwesomeIcon icon="chevron-left" /></Link>
+            <div className="navigation">
+                <Link to="/" className="back-link"><FontAwesomeIcon icon="chevron-left" /></Link>
+            </div>
 
             <ul>
                 {cart.order.map((orderItem) => {

@@ -52,43 +52,62 @@ const Details = () => {
 
 
     return (
-        <div>
-            <Link to="/"><FontAwesomeIcon icon="chevron-left" /></Link>
-            <Link to="/order"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
+        <div className="details">
+            <div className="navigation">
+                <Link to="/" className="back-link"><FontAwesomeIcon icon="chevron-left" /></Link>
+                <Link to="/order" className="cart"><FontAwesomeIcon icon="shopping-cart" /><div>{cart.totalAmount}</div></Link>
+            </div>
 
 
+            <img src={`../img/burgers/${burger.url}`} alt={burger.name}></img>
 
-            <img src={`../img/burgers/${burger.url}`} alt={burger.name} width="250px"></img>
-            {
-                burger.discount &&
-                <p> {burger.discount}%  OFF</p>
-            }
-            <h2>{burger.name}</h2>
+            <div className="details-order">
 
-            {burger.discount
-                ? <> <del> ${minDigits(burger.price)} </del> <p>${Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100}</p> </>
-                : <p>${minDigits(burger.price)}</p>
-            }
+                <div className="slide-bar"></div>
 
-            <p>{burger.description}</p>
+                {
+                    burger.discount &&
+                    <p className="discount"> {burger.discount}%  OFF</p>
+                }
 
-            <dl>
-                <dt>Size</dt>
-                <dd><FontAwesomeIcon icon="hamburger" /> {burger.size} </dd>
-                <dt>Weight</dt>
-                <dd><FontAwesomeIcon icon="weight-hanging" /> {burger.weight}g</dd>
-                <dt> Prepare time</dt>
-                <dd><FontAwesomeIcon icon="clock" /> {burger.time} mins</dd>
-            </dl>
+                <h2>{burger.name}</h2>
 
-            <AddRemove
-                amount={amount}
-                handlePlus={handlePlus}
-                handleMinus={handleMinus}
-            />
+                <div className="price">
+                    {
+                        burger.discount
+                            ? <> <p>${Math.round((burger.price - burger.price * burger.discount / 100) * 100) / 100}</p> <del>{minDigits(burger.price)}</del> </>
+                            : <p>${minDigits(burger.price)}</p>
+                    }
+                </div>
 
-            <button onClick={handleAdd} label="Add to cart"><FontAwesomeIcon icon="shopping-cart" /> Add to cart</button>
-        </div>
+                <p className="description">{burger.description}</p>
+
+                <dl>
+                    <div>
+                        <dt>Size</dt>
+                        <dd><FontAwesomeIcon icon="hamburger" /> {burger.size} </dd>
+                    </div>
+                    <div>
+                        <dt>Weight</dt>
+                        <dd><FontAwesomeIcon icon="weight-hanging" /> {burger.weight}g</dd>
+                    </div>
+                    <div>
+                        <dt> Prepare time</dt>
+                        <dd><FontAwesomeIcon icon="clock" /> {burger.time} mins</dd>
+                    </div>
+                </dl>
+
+                <div className="add-cart">
+                    <AddRemove
+                        amount={amount}
+                        handlePlus={handlePlus}
+                        handleMinus={handleMinus}
+                    />
+
+                    <button onClick={handleAdd} label="Add to cart"><FontAwesomeIcon icon="shopping-cart" /> Add to cart</button>
+                </div>
+            </div>
+        </div >
     )
 }
 
