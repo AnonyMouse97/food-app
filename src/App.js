@@ -49,13 +49,13 @@ const App = () => {
       <div className="App">
         <Switch>
           <CartContext.Provider value={cartProvider}>
-            <Route exact path="/">
+            <Route path="/">
               <Listing />
             </Route>
-            <Route exact path="/details/:id">
+            <Route  path="/details/:id">
               <Details />
             </Route>
-            <Route exact path="/order">
+            <Route  path="/order">
               <Order />
             </Route>
           </CartContext.Provider>
