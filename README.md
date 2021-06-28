@@ -26,4 +26,6 @@ As i got sick during the test thanks to my 5G biological antenna's update I had 
 
 And don't forget to order you fake burger 🍔 !
 
+/!\/!\ mobile version only /!\/!\
+
 [The deployed site](https://wacdos.netlify.app/)
