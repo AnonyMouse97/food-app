@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Listing from './components/listing/listing';
 import Details from './components/details/details';
-import Order from './components/order/order'
+import Order from './components/order/order';
 import CartContext from './components/sub/cartContext';
+import FourOfour from './components/sub/fourOfour';
 
 // font Awesome global imports
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -43,12 +44,11 @@ const App = () => {
 
   const cartProvider = useMemo(() => ({ cart, setCart }), [cart, setCart])
 
-
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <CartContext.Provider value={cartProvider}>
+        <CartContext.Provider value={cartProvider}>
+          <Switch>
             <Route exact path="/">
               <Listing />
             </Route>
@@ -58,8 +58,11 @@ const App = () => {
             <Route exact path="/order">
               <Order />
             </Route>
-          </CartContext.Provider>
-        </Switch>
+            <Route path="*">
+              <FourOfour />
+            </Route>
+          </Switch>
+        </CartContext.Provider>
       </div>
     </Router>
   );

@@ -1,0 +1,33 @@
+.fourOfour{
+    background : radial-gradient(#ffee9f ,#ffd134 );
+    height: 100vh;
+    position: relative;
+    .back-link{
+        position: absolute;
+        margin: 2em;
+        background-color: #ffffff;
+        height: 40px;
+        width: 40px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #3f3f3f;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 40px;
+    }
+    .text{
+        padding-top: 7em;
+        margin: 0 auto;
+        width: 75%;
+        h1{
+            font-size: 4em;
+            font-weight: bold;
+        }
+        img{
+            margin: 3em auto 0;
+            display: block;
+            height: 200px;
+            filter: grayscale(80%);
+        }
+    }
+}

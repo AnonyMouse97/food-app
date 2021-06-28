@@ -7,9 +7,12 @@ ul{
         display: grid;
         grid-template-columns: 20% 50% 30%;
         height: 8vh;
-        img{
-            height: 70%;
-            margin:auto;
+        .burger-picture{
+            height: 4em;;
+            img{
+                height: 70%;
+                margin:auto;
+            }
         }
         h3{
             font-weight: bold;
