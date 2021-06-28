@@ -1,10 +1,12 @@
 .order{
-    position: relative;
     background-color: #dadada;
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    //min-height: 100vh;
+    ul{
+        margin-bottom: 14em;
+    }
     .checkout{
-        position: sticky;
+        position: fixed;
         width: 100%;
         bottom: 0;
         border-top-left-radius: 30px;
