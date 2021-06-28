@@ -52,10 +52,10 @@ const App = () => {
             <Route exact path="/">
               <Listing />
             </Route>
-            <Route exact path="/details/:id">
+            <Route  path="/details/:id">
               <Details />
             </Route>
-            <Route exact path="/order">
+            <Route  path="/order">
               <Order />
             </Route>
             <Route path="*">
