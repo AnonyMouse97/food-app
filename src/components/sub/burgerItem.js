@@ -6,7 +6,9 @@ const BurgerItem = ({ name, price, discount = null, image = 'defaultBurger.png' 
 
     return (
         <>
-            <img src={`img/burgers/${image}`} alt={name}></img>
+            <div className="burger-picture">
+                <img src={`img/burgers/${image}`} alt={name}></img>
+            </div>
 
             <h3>{name}</h3>
             <div className="price">
